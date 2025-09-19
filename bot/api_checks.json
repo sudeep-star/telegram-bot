@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Users PnL",
+    "url": "https://aggregator-api.wapal.io/user/pnl/${WALLET_ADDR}",
+    "method": "GET",
+    "expect_status": 200,
+    "assert": [
+      {"path": "assets", "exists": true}
+    ],
+    "latency_ms_warn": 800
+  },
+  {
+    "name": "Rewards",
+    "url": "https://aggregator-api.wapal.io/user/rewards/${WALLET_ADDR}?interval=all_time",
+    "method": "GET",
+    "expect_status": 200,
+    "assert": [
+      {"path": "assets", "exists": true}
+    ],
+    "latency_ms_warn": 800
+
+ },
+ {
+    "name": "User Collections",
+    "url": "https://aggregator-api.wapal.io/user/collections/${WALLET_ADDR}",
+    "method": "GET",
+    "expect_status": 200,
+    "assert": [
+      {"path": "assets", "exists": true}
+    ],
+    "latency_ms_warn": 800
+ },
+ {
+    "name": "User Favorite Collections",
+    "url": "https://aggregator-api.wapal.io/user/collections/favourites/${WALLET_ADDR}",
+    "method": "GET",
+    "expect_status": 200,
+    "assert": [
+      {"path": "assets", "exists": true}
+    ],
+    "latency_ms_warn": 800
+ },
+    {
+        "name": "User Portfolio",
+        "url": "https://aggregator-api.wapal.io/user/tokens/${WALLET_ADDR}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "User Activities",
+        "url": "https://aggregator-api.wapal.io/user/activities/${WALLET_ADDR}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "User Biddings",
+        "url": "https://aggregator-api.wapal.io/user/biddings/${WALLET_ADDR}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "User Listings",
+        "url": "https://aggregator-api.wapal.io/user/listings/${WALLET_ADDR}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "Collection Details",
+        "url": "https://aggregator-api.wapal.io/collection/${SLUG}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "Collection Biddings",
+        "url": "https://aggregator-api.wapal.io/collection/biddings/${COLLECTION_ID}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "Collection Top Bidding",
+        "url": "https://aggregator-api.wapal.io/collection/biddings/top/${COLLECTION_ID}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "Collection Holders",
+        "url": "https://aggregator-api.wapal.io/collection/holders/${COLLECTION_ID}",
+        "method": "GET",
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    },
+    {
+        "name": "Collections Supply and Holders",
+        "url": "https://aggregator-api.wapal.io/collection/supply-and-holders",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": {
+            "collection_ids": ["${COLLECTION_ID}"]
+        },
+        "expect_status": 200,
+        "assert": [
+        {"path": "assets", "exists": true}
+        ],
+        "latency_ms_warn": 800
+    }
+]
